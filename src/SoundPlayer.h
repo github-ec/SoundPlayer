@@ -2,15 +2,13 @@
 #include <Arduino.h>
 #include "DFRobotDFPlayerMini.h"
 
-// LANGUAGE SELECTION: 0 = GERMAN, 1 = ENGLISH
 #define DFP_LANGUAGE 1 
 
 #if defined(ARDUINO_ARCH_ESP32)
-  // ESP32 uses HardwareSerial
 #elif defined(__AVR__)
   #include <SoftwareSerial.h>
 #else
-  #error "Unsupported architecture! Only ESP32 and AVR are supported."
+  #error "Unsupported architecture!"
 #endif
 
 class SoundPlayer {
@@ -28,7 +26,8 @@ private:
   bool _doesPlay = false;
   bool _initFailed = false;
 
-  const char* getTxt(int msgIdx);
+  // NEU: Deklaration der sicheren Textausgabe
+  void printMsg(int msgIdx, bool newLine);
   void printDetail(uint8_t type, int value);                                                              
 
 public:
