@@ -49,6 +49,6 @@ public:
   bool isPlaying();
   void messagesOn()  { _verbose = true; }
   void messagesOff() { _verbose = false; }
-  void setVolume(byte value) { myDFPlayer.volume(value); }
+  void setVolume(byte value) { myDFPlayer.volume(value); delay(100);}
   int getMaxFiles();
 };
