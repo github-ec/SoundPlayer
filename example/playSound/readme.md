@@ -17,7 +17,7 @@ This sketch demonstrates how to use the `SoundPlayer` class to play random audio
 | **VCC** | 5V | 5V |
 | **GND** | GND | GND |
 
-*Note: When using 5V on the DFPlayer with a 3.3V MCU (ESP32), a 1k Ohm resistor on the RX line is recommended to reduce noise.*
+*Note: A 1k Ohm resistor on the RX line of the Player is recommended to reduce noise.*
 
 ## Code Overview
 
