@@ -17,7 +17,7 @@ This sketch demonstrates how to use the `SoundPlayer` class to play random audio
 | **VCC** | 5V | 5V |
 | **GND** | GND | GND |
 
-*Note: A 1k Ohm resistor between Tx of the conroller and RX of the Player is recommended to reduce noise.*
+*Note: A 1k Ohm resistor between Tx of the controller and RX of the Player is recommended to reduce noise.*
 
 ## Code Overview
 
