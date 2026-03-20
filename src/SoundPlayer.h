@@ -2,6 +2,11 @@
 #include <Arduino.h>
 #include "DFRobotDFPlayerMini.h"
 
+/*
+  Version 2.0
+  Date 2026/03/20
+*/
+
 /**
  * @file SoundPlayer.h
  * @brief Wrapper class for the DFRobotDFPlayerMini to handle audio playback.
