@@ -8,7 +8,7 @@
 */
 
 /**
- * @file SoundPlayer.h
+ * @file SoundPlayerEC.h
  * @brief Wrapper class for the DFRobotDFPlayerMini to handle audio playback.
  * 
  * Supports both ESP32 (HardwareSerial) and AVR (SoftwareSerial) architectures.
