@@ -24,10 +24,10 @@
 #endif
 
 /**
- * @class SoundPlayer
+ * @class SoundPlayerEC
  * @brief Manages audio playback, player status, and serial communication with the DFPlayer Mini.
  */
-class SoundPlayer {
+class SoundPlayerEC {
 private:
   DFRobotDFPlayerMini myDFPlayer; ///< Internal DFPlayer Mini instance
   
@@ -58,9 +58,9 @@ private:
 
 public:
   /**
-   * @brief Constructor for SoundPlayer.
+   * @brief Constructor for SoundPlayerEC.
    */
-  SoundPlayer();
+  SoundPlayerEC();
   
   #if defined(ARDUINO_ARCH_ESP32)
     /**
