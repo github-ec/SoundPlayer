@@ -1,6 +1,6 @@
 # SoundPlayerEC Example: Robust Random Playback
 
-This sketch demonstrates how to use the `SoundPlayer` class to play random audio files from an SD card. It is designed to work cross-platform on both **ESP32** and **Arduino AVR (Nano/Uno)**.
+This sketch demonstrates how to use the `SoundPlayerEC` class to play random audio files from an SD card. It is designed to work cross-platform on both **ESP32** and **Arduino AVR (Nano/Uno)**.
 
 ## Features
 - **Cross-Platform Support:** Automatically selects the correct Serial type (Hardware vs. Software Serial) based on the board.
