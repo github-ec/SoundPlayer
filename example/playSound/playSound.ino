@@ -1,7 +1,7 @@
-#include "SoundPlayer.h"
+#include "SoundPlayerEC.h"
 
 // Instance of the SoundPlayer
-SoundPlayer myPlayer;
+SoundPlayerEC myPlayer;
 
 // Architecture-dependent pin definitions
 #if defined(ARDUINO_ARCH_ESP32)
