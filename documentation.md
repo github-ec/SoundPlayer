@@ -1,8 +1,8 @@
-# 📘 Documentation: `SoundPlayer` Class
+# 📘 Documentation: `SoundPlayerEC` Class
 
 ## 🧩 Overview
 
-The `SoundPlayer` class provides a wrapper for controlling a DFPlayer Mini MP3 module.
+The `SoundPlayerEC` class provides a wrapper for controlling a DFPlayer Mini MP3 module.
 It supports initialization, playback, and status handling on microcontrollers such as Arduino (AVR) and ESP32.
 
 ---
@@ -61,7 +61,7 @@ Outputs detailed status information (e.g., error codes or events).
 
 ### 🔧 Constructor
 
-#### `SoundPlayer()`
+#### `SoundPlayerEC()`
 
 Creates a new instance without initializing hardware.
 
@@ -177,7 +177,7 @@ Returns the maximum number of available audio files.
 ## 🧪 Example Usage
 
 ```cpp
-SoundPlayer player;
+SoundPlayerEC player;
 
 void setup() {
   player.init(10, 11);
