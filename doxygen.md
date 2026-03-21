@@ -1,12 +1,12 @@
-# SoundPlayer Class Reference
+# SoundPlayerEC Class Reference
 
 Wrapper class for the `DFRobotDFPlayerMini` to handle audio playback and serial communication.
 
-`#include <SoundPlayer.h>`
+`#include <SoundPlayerEC.h>`
 
 ## Description
 
-The `SoundPlayer` class manages communication with the DFPlayer Mini hardware. It handles the abstraction between **HardwareSerial** (ESP32) and **SoftwareSerial** (AVR) and provides high-level methods for playback control and status monitoring.
+The `SoundPlayerEC` class manages communication with the DFPlayer Mini hardware. It handles the abstraction between **HardwareSerial** (ESP32) and **SoftwareSerial** (AVR) and provides high-level methods for playback control and status monitoring.
 
 ---
 
@@ -15,7 +15,7 @@ The `SoundPlayer` class manages communication with the DFPlayer Mini hardware. I
 
 | Return Type | Name and Description |
 | :--- | :--- |
-| | **[SoundPlayer](#function-soundplayer)**()<br>Constructor for the SoundPlayer class. |
+| | **[SoundPlayerEC](#function-SoundPlayerEC)**()<br>Constructor for the SoundPlayerEC class. |
 | void | **[init](#function-init-esp32)**(int rx, int tx, HardwareSerial* hwSerialPtr = &Serial2)<br>*(ESP32 only)* Initializes the player using HardwareSerial. |
 | void | **[init](#function-init-avr)**(int rx, int tx)<br>*(AVR only)* Initializes the player using SoftwareSerial. |
 | void | **[handlePlayerStatus](#function-handleplayerstatus)**()<br>Updates and checks the player status (should be called in the main loop). |
@@ -32,7 +32,7 @@ The `SoundPlayer` class manages communication with the DFPlayer Mini hardware. I
 
 ## Function Documentation
 
-### <a name="function-soundplayer"></a> SoundPlayer()
+### <a name="function-SoundPlayerEC"></a> SoundPlayerEC()
 Initializes the internal state and flags.
 
 ### <a name="function-init-esp32"></a> void init(int rx, int tx, HardwareSerial* hwSerialPtr)
