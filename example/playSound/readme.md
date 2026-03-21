@@ -1,4 +1,4 @@
-# SoundPlayer Example: Robust Random Playback
+# SoundPlayerEC Example: Robust Random Playback
 
 This sketch demonstrates how to use the `SoundPlayer` class to play random audio files from an SD card. It is designed to work cross-platform on both **ESP32** and **Arduino AVR (Nano/Uno)**.
 
@@ -38,6 +38,6 @@ The loop performs two main tasks:
 - **Timed Action:** Every 5 seconds, if the player is ready, it selects a random folder (1-9) and a random file (1-10) and triggers playback using `playTitle(folder, file)`.
 
 ## Requirements
-- `SoundPlayer` Library (Header and CPP files).
+- `SoundPlayerEC` Library (Header and CPP files).
 - `DFRobotDFPlayerMini` Library.
 - An SD card formatted in FAT32 with folders named `01` to `09` and files named `001.mp3` to `010.mp3`.
