@@ -1,10 +1,10 @@
 #include "SoundPlayerEC.h"
 
-SoundPlayer::SoundPlayer() { 
+SoundPlayerEC::SoundPlayerEC() { 
   _serialPtr = nullptr; 
 }
 
-void SoundPlayer::printMsg(int msgIdx, bool newLine) {
+void SoundPlayerEC::printMsg(int msgIdx, bool newLine) {
   const __FlashStringHelper* ptr = nullptr;
   #if (DFP_LANGUAGE == 0)
     switch (msgIdx) {
@@ -34,11 +34,11 @@ void SoundPlayer::printMsg(int msgIdx, bool newLine) {
 }
 
 #if defined(ARDUINO_ARCH_ESP32)
-void SoundPlayer::init(int rx, int tx, HardwareSerial* hwSerialPtr) {
+void SoundPlayerEC::init(int rx, int tx, HardwareSerial* hwSerialPtr) {
   _serialPtr = hwSerialPtr;
   if (_serialPtr) _serialPtr->begin(9600, SERIAL_8N1, rx, tx);
 #else
-void SoundPlayer::init(int rx, int tx) {
+void SoundPlayerEC::init(int rx, int tx) {
   if (_serialPtr) delete _serialPtr;
   _serialPtr = new SoftwareSerial(rx, tx);
   _serialPtr->begin(9600);
@@ -90,7 +90,7 @@ void SoundPlayer::init(int rx, int tx) {
   while(_serialPtr->available()) _serialPtr->read(); 
 }
 
-void SoundPlayer::handlePlayerStatus() {
+void SoundPlayerEC::handlePlayerStatus() {
   if (!_initFailed && myDFPlayer.available()) {
     uint8_t type = myDFPlayer.readType();
     int value = myDFPlayer.read();
@@ -102,7 +102,7 @@ void SoundPlayer::handlePlayerStatus() {
   }
 }
 
-void SoundPlayer::playTitle(int value) {
+void SoundPlayerEC::playTitle(int value) {
   if (!_initFailed && value > 0) { 
     myDFPlayer.playMp3Folder(value); 
     _doesPlay = true; 
@@ -111,7 +111,7 @@ void SoundPlayer::playTitle(int value) {
   }
 }
 
-void SoundPlayer::playTitle(int cat, int wordNo) {
+void SoundPlayerEC::playTitle(int cat, int wordNo) {
   if (!_initFailed) { 
     myDFPlayer.playFolder(cat, wordNo); 
     _doesPlay = true; 
@@ -120,12 +120,12 @@ void SoundPlayer::playTitle(int cat, int wordNo) {
   }
 }
 
-bool SoundPlayer::playingTitle(int value) { 
+bool SoundPlayerEC::playingTitle(int value) { 
   playTitle(value); 
   return _doesPlay; 
 }
 
-void SoundPlayer::printDetail(uint8_t type, int value) {
+void SoundPlayerEC::printDetail(uint8_t type, int value) {
   if (!_verbose) return;
   switch (type) {
     case TimeOut:              printMsg(4, true); break;
@@ -138,11 +138,11 @@ void SoundPlayer::printDetail(uint8_t type, int value) {
   }
 }
 
-int SoundPlayer::getMaxFiles() { 
+int SoundPlayerEC::getMaxFiles() { 
   return _initFailed ? -1 : myDFPlayer.readFileCounts(); 
 }
 
-bool SoundPlayer::initFailed() { return _initFailed; }
-bool SoundPlayer::isReady()    { return _ready && !_initFailed; }
-bool SoundPlayer::isPlaying()  { return _doesPlay; }
-void SoundPlayer::setReady(bool v) { _ready = v; }
+bool SoundPlayerEC::initFailed() { return _initFailed; }
+bool SoundPlayerEC::isReady()    { return _ready && !_initFailed; }
+bool SoundPlayerEC::isPlaying()  { return _doesPlay; }
+void SoundPlayerEC::setReady(bool v) { _ready = v; }
